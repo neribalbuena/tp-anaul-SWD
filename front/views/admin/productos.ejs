@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickShop - Administración de Productos</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Barra de navegación del Admin -->
+  <header class="navbar">
+    <div class="logo"> QuickShop Admin</div>
+    <nav>
+      <a href="/">Ir a la Tienda</a>
+      <a href="/admin/productos" class="active">Productos</a>
+    </nav>
+  </header>
+
+  <!-- Contenedor Principal -->
+  <main class="container">
+    <div class="admin-header">
+      <h2>Administración de productos</h2>
+      <a href="/admin/productos/nuevo" class="btn btn-primary">+ Nuevo producto</a>
+    </div>
+
+    <!-- Tabla de Productos -->
+    <div class="table-card">
+      <table class="admin-table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Categoría</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Ejemplo de fila estática para el maquetado -->
+          <tr>
+            <td>1</td>
+            <td>Refresco</td>
+            <td>Bebidas</td>
+            <td>$ 2.500</td>
+            <td>25</td>
+            <td class="actions">
+              <a href="/admin/productos/editar/1" class="btn btn-edit">Editar</a>
+              <button class="btn btn-delete" onclick="confirmDelete(1)">Eliminar</button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Galletas</td>
+            <td>Almacén</td>
+            <td>$ 1.300</td>
+            <td>18</td>
+            <td class="actions">
+              <a href="/admin/productos/editar/2" class="btn btn-edit">Editar</a>
+              <button class="btn btn-delete" onclick="confirmDelete(2)">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    function confirmDelete(id) {
+      if (confirm('Estás seguro de que deseas eliminar este producto?')) {
+        // Lógica de eliminación cuando integren el backend
+      }
+    }
+  </script>
+</body>
+</html>
