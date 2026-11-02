@@ -11,35 +11,51 @@
 .menu a {
     text-decoration: none;
     font-size: 18px;
+    color: #333;
+    margin-right: 20px;
 }
 
 .foto {
     position: relative;
+    min-height: 60vh;
 }
 
 .foto img {
     width: 100%;
-    height: 100%;
-    }
+    height: 60vh;
+    object-fit: cover;
+}
 
-.foto button {
+.boton-catalogo {
     position: absolute;
     top: 50%;
     left: 50%;
-    padding: 25px;
+    transform: translate(-50%, -50%);
+    padding: 18px 26px;
     background: #c9ae74;
-}
-
-.foto button a {
+    color: #222;
+    border-radius: 6px;
     text-decoration: none;
     font-size: 18px;
+}
+
+.pagina-productos {
+    max-width: 1100px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.pagina-productos > h1,
+.formulario-producto h2 {
+    color: #66532f;
+    margin-bottom: 20px;
 }
 
 .catalogo {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    margin-bottom: 40px;
 }
 
 .producto {
@@ -48,11 +64,13 @@
     padding: 15px;
     border-radius: 10px;
     text-align: center;
+    box-shadow: 0 2px 10px #00000014;
 }
 
 .producto img {
     width: 100%;
     height: 180px;
+    object-fit: contain;
 }
 
 .producto h3 {
@@ -63,79 +81,157 @@
     color: #444;
     margin: 10px 0;
 }
-/* --- Estilos adicionales para el panel del adm xd --- */
 
-main {
-  padding: 20px;
+.formulario-producto {
+    max-width: 560px;
+    padding: 24px;
+    background: #f7f5eb;
+    border-radius: 10px;
 }
 
-/* Tablas del Admin */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  background: white;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  margin-top: 15px;
+.formulario-producto form {
+    display: grid;
+    gap: 10px;
 }
 
-th, td {
-  padding: 12px;
-  border-bottom: 1px solid #e2e8f0;
-  text-align: left;
+.formulario-producto input,
+.formulario-producto textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font: inherit;
 }
 
-th {
-  background: #f1f5f9;
-  font-weight: bold;
-  color: #333;
+.formulario-producto button {
+    padding: 12px;
+    border: 0;
+    border-radius: 5px;
+    background: #8b7045;
+    color: white;
+    font: inherit;
+    cursor: pointer;
 }
 
-/* Formularios del Admin */
-form input, 
-form select {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  font-size: 14px;
-  margin-top: 5px;
+.ayuda-formulario {
+    color: #555;
+    font-size: 14px;
 }
 
-form label {
-  font-weight: bold;
-  color: #444;
+.mensaje {
+    padding: 12px;
+    margin-bottom: 20px;
+    border-radius: 5px;
 }
 
-/* Botones de acción */
-.btn-nuevo {
-  background: #2563eb;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
+.mensaje-exito {
+    background: #e4f4e3;
+    color: #215c25;
 }
 
-.btn-editar {
-  background: #0284c7;
-  color: white;
-  padding: 6px 12px;
-  border-radius: 4px;
-  text-decoration: none;
-  font-size: 14px;
-  margin-right: 5px;
-  display: inline-block;
+.mensaje-error {
+    background: #fce8e6;
+    color: #8a1c13;
 }
 
-.btn-eliminar {
-  background: #ef4444;
-  color: white;
-  border: none;
-  padding: 6px 12px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
+.encabezado-admin {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.boton-admin {
+    display: inline-block;
+    padding: 10px 14px;
+    border: 0;
+    border-radius: 5px;
+    background: #8b7045;
+    color: white;
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.boton-secundario {
+    background: #53606d;
+}
+
+.boton-peligro {
+    background: #a9362b;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px #00000014;
+}
+
+.tabla-admin {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-admin th,
+.tabla-admin td {
+    padding: 12px;
+    border-bottom: 1px solid #e3e3e3;
+    text-align: left;
+    vertical-align: top;
+}
+
+.tabla-admin th {
+    background: #f1f0e9;
+}
+
+.acciones-admin {
+    min-width: 240px;
+}
+
+.acciones-admin form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.acciones-admin input {
+    min-width: 110px;
+    padding: 8px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font: inherit;
+}
+
+.acciones-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.solo-lectores {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (max-width: 600px) {
+    .encabezado-admin {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .tabla-admin {
+        min-width: 700px;
+    }
 }

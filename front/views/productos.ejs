@@ -1,26 +1,38 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Productos | Catálogo de compras</title>
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
 <nav class="menu">
     <a href="/">Inicio</a>
-    <a href="#">Administrador</a>
+    <a href="/productos">Catálogo</a>
+    <a href="/admin/productos">Administrar productos</a>
 </nav>
 
+<main class="pagina-productos">
+    <h1>Catálogo de productos</h1>
 
-<section class="catalogo">
-    <% productos.forEach(producto => { %>
-    <article class="producto">
-        <h3><%= producto.nombre %></h3>
-        <img src="<%= producto.imagen%>">
-        <p><%= producto.descripcion %></p>
-        <p><%= producto.precio %>$</p>
-        <p><%= producto.stock %></p>  
-    </article>
-<% }) %>
-</section>
+    <section class="catalogo" aria-label="Productos disponibles">
+        <% if (productos.length === 0) { %>
+        <p>Aún no hay productos en la base de datos.</p>
+        <% } %>
+        <% productos.forEach(producto => { %>
+        <article class="producto">
+            <h2><%= producto.nombre %></h2>
+            <% if (producto.imagen) { %>
+            <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
+            <% } %>
+            <p><%= producto.descripcion %></p>
+            <p><strong>Precio:</strong> <%= producto.precio %></p>
+            <p><strong>Stock:</strong> <%= producto.stock %></p>
+        </article>
+        <% }) %>
+    </section>
+</main>
 </body>
 </html>

@@ -1,77 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>QuickShop - Administración de Productos</title>
-  <link rel="stylesheet" href="/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Administrar productos | Catálogo de compras</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
+<nav class="menu">
+    <a href="/">Inicio</a>
+    <a href="/productos">Catálogo</a>
+    <a href="/admin/productos">Administrar productos</a>
+    <a href="/admin/productos/nuevo">Nuevo producto</a>
+</nav>
 
-  <!-- Barra de navegación del Admin -->
-  <header class="navbar">
-    <div class="logo"> QuickShop Admin</div>
-    <nav>
-      <a href="/">Ir a la Tienda</a>
-      <a href="/admin/productos" class="active">Productos</a>
-    </nav>
-  </header>
-
-  <!-- Contenedor Principal -->
-  <main class="container">
-    <div class="admin-header">
-      <h2>Administración de productos</h2>
-      <a href="/admin/productos/nuevo" class="btn btn-primary">+ Nuevo producto</a>
+<main class="pagina-productos">
+    <div class="encabezado-admin">
+        <h1>Administrar productos</h1>
+        <a class="boton-admin" href="/admin/productos/nuevo">Nuevo producto</a>
     </div>
 
-    <!-- Tabla de Productos -->
-    <div class="table-card">
-      <table class="admin-table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Categoría</th>
-            <th>Precio</th>
-            <th>Stock</th>
-            <th>Acciones</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Ejemplo de fila estática para el maquetado -->
-          <tr>
-            <td>1</td>
-            <td>Refresco</td>
-            <td>Bebidas</td>
-            <td>$ 2.500</td>
-            <td>25</td>
-            <td class="actions">
-              <a href="/admin/productos/editar/1" class="btn btn-edit">Editar</a>
-              <button class="btn btn-delete" onclick="confirmDelete(1)">Eliminar</button>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Galletas</td>
-            <td>Almacén</td>
-            <td>$ 1.300</td>
-            <td>18</td>
-            <td class="actions">
-              <a href="/admin/productos/editar/2" class="btn btn-edit">Editar</a>
-              <button class="btn btn-delete" onclick="confirmDelete(2)">Eliminar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </main>
+    <% if (success === 'creado') { %>
+    <p class="mensaje mensaje-exito" role="status">Producto creado correctamente.</p>
+    <% } else if (success === 'actualizado') { %>
+    <p class="mensaje mensaje-exito" role="status">Producto actualizado correctamente.</p>
+    <% } else if (success === 'eliminado') { %>
+    <p class="mensaje mensaje-exito" role="status">Producto eliminado correctamente.</p>
+    <% } %>
 
-  <script>
-    function confirmDelete(id) {
-      if (confirm('Estás seguro de que deseas eliminar este producto?')) {
-        // Lógica de eliminación cuando integren el backend
-      }
-    }
-  </script>
+    <div class="tabla-contenedor">
+        <table class="tabla-admin">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Descripción</th>
+                    <th>Precio</th>
+                    <th>Stock</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (productos.length === 0) { %>
+                <tr><td colspan="6">Todavía no hay productos.</td></tr>
+                <% } %>
+                <% productos.forEach(producto => { %>
+                <tr>
+                    <td><%= producto.id %></td>
+                    <td><%= producto.nombre %></td>
+                    <td><%= producto.descripcion %></td>
+                    <td><%= producto.precio %></td>
+                    <td><%= producto.stock %></td>
+                    <td class="acciones-admin">
+                        <a class="boton-admin boton-secundario" href="/admin/productos/editar/<%= producto.id %>">Editar</a>
+                        <form action="/admin/productos/eliminar/<%= producto.id %>" method="post"
+                            onsubmit="return confirm('¿Eliminar este producto? Esta acción no se puede deshacer.');">
+                            <label class="solo-lectores" for="admin-password-<%= producto.id %>">Contraseña de administrador</label>
+                            <input id="admin-password-<%= producto.id %>" name="admin_password" type="password"
+                                placeholder="Contraseña" autocomplete="current-password" required>
+                            <button class="boton-admin boton-peligro" type="submit">Eliminar</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</main>
 </body>
 </html>
