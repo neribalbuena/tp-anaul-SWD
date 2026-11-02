@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url("/public/img/fondo.jpg");
+}
+.menu {
+    background-color: #d3df6c;
+    padding: 20px;    
+}
+
+.menu a {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.foto {
+    position: relative;
+}
+
+.foto strong {
+    position: absolute;
+    left: 40%;
+    top: 10%;
+    font-size: 60px;
+    color: skyblue;
+    text-shadow: 2px 4px blue;
+}
+.foto h3 {
+    position: absolute;
+    left: 10%;
+    top: 25%;
+    font-size: 25px;
+    color: skyblue;
+    text-shadow: 1px 2px blue;    
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    }
+.foto button {
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    background: #c9ae74;
+    height: 70px;
+    width: 220px;
+}
+.foto button a {
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.catalogo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.producto {
+    background: rgb(219, 159, 159);
+    width: 250px;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid black;
+}
+.producto img {
+    width: 100%;
+    height: 180px;
+}
+.producto p {
+    color: black;
+    margin: 10px ;
+}
+section{
+    padding: 20px;
+}
+button{
+    background-color: rgb(140, 140, 224);
+    height: 50px;
+    width: 150px;
+    font-weight: 700;
+}
+footer{
+    padding: 90px;
+}
+.boton a{
+    text-decoration: none;
+    color: black;
+}
+.catalogo .stock{
+    color: rgb(0, 209, 28);
+
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<section class="fondo"> 
+<section class="detalles">
+    <img  src="<%= producto.imagen %>">
+<article class="info">
+    <h3><%= producto.nombre %></h3>
+    <p class="marca">coca cola</p>
+    <hr>
+    <p>categoria: <%= producto.descripcion %></p>
+    <p>stock: <%= producto.stock %></p>
+    <p>$<%= producto.precio %></p>
+    <button>
+        <a href="/">agregar</a>
+    </button>
+
+</article>
+</section>
+</section>
+<style>
+
+.fondo{ 
+    background-image: url("../public/img/fondo.jpg");
+    background-position: center;
+}
+.marca{
+    color: rgba(0, 0, 0, 0.571);
+}
+nav a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+
+h3 {
+    text-align: center;
+    font-size: 30px;
+    padding: 4px;
+    margin: 10px;
+}
+.detalles p {
+    padding: 13px;
+    font-size: 16px;
+}
+button {
+    background-color: rgba(27, 97, 189, 0.654);
+    text-decoration: none;
+    border: 0;
+    height: 50px;
+    width:320px;
+    border-radius: 10px;
+}
+button a{
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-family: cursive;
+}
+.detalles {
+    display: flex;
+    align-items: center;
+}
+.detalles img {
+    width: 500px;
+}
+.info p, h3 {
+    text-align: left;
+    font-size: 30px;
+
+}
+.info p{
+    font-size: 30px;
+}
+.info h3{
+font-size: 50px;
+}
+
+</style>
+</body>
+</html>

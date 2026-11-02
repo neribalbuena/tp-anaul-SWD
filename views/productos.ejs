@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<nav class="menu">
+    <a href="/">Inicio</a>
+    <a href="/admin ">Administrador</a>
+</nav>
+
+<section class="catalogo">
+    <% productos.forEach(producto => { %>
+    <article class="producto">
+        <h3><%= producto.nombre %></h3>
+        <img src="<%= producto.imagen%>">
+        <p><%= producto.descripcion %></p>
+        <p>$<%= producto.precio %></p>
+        <p class="stock"> stock <%= producto.stock %></p>
+        <button class="boton">
+            <a href="/verDetalles/<%= producto.id %>">detalles</a>
+        </button>
+    </article>
+<% }) %>
+</section>
+</body>
+</html>
