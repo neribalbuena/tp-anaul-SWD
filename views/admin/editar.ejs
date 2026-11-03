@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar producto</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <header>
     <nav>
-      <a href="/">ir a la tienda</a>
+      <a href="/">Ir a la tienda</a>
       <a href="/admin/productos">Productos</a>
     </nav>
   </header>
@@ -16,38 +17,40 @@
   <main>
     <div>
       <h2>Editar producto</h2>
-      <form action="/admin/productos/editar/1" method="POST">
+      <form action="/admin/productos/editar/<%= producto.id %>" method="POST">
         <div>
           <label for="nombre">Nombre</label>
-          <input type="text" id="nombre" name="nombre" value="Refresco" required>
+          <input type="text" id="nombre" name="nombre" value="<%= producto.nombre %>" required>
         </div>
 
         <div>
           <label for="categoria">Categoría *</label>
           <select id="categoria" name="categoria" required>
-            <option value="Bebidas" selected>Bebidas</option>
-            <option value="Almacén">Almacén</option>
-            <option value="Limpieza">Limpieza</option>
-            <option value="Lácteos">Lácteos</option>
+            <option value="Bebidas" <%= producto.categoria === 'Bebidas' ? 'selected' : '' %>>Bebidas</option>
+            <option value="Almacén" <%= producto.categoria === 'Almacén' ? 'selected' : '' %>>Almacén</option>
+            <option value="Limpieza" <%= producto.categoria === 'Limpieza' ? 'selected' : '' %>>Limpieza</option>
+            <option value="Lácteos" <%= producto.categoria === 'Lácteos' ? 'selected' : '' %>>Lácteos</option>
+            <option value="Snacks" <%= producto.categoria === 'Snacks' ? 'selected' : '' %>>Snacks</option>
           </select>
         </div>
 
         <div>
           <div>
             <label for="precio">Precio</label>
-            <input type="number" id="precio" name="precio" value="2500" min="0" step="0.01" required>
+            <input type="number" id="precio" name="precio" value="<%= producto.precio %>" min="0" step="0.01" required>
           </div>
 
           <div>
             <label for="stock">Stock *</label>
-            <input type="number" id="stock" name="stock" value="25" min="0" required>
+            <input type="number" id="stock" name="stock" value="<%= producto.stock %>" min="0" required>
           </div>
         </div>
 
         <div>
           <label for="imagen">URL de la imagen</label>
-          <input type="text" id="imagen" name="imagen" value="/images/refresco.png">
+          <input type="text" id="imagen" name="imagen" value="<%= producto.imagen %>">
         </div>
+
         <div>
           <button type="submit">Guardar cambios</button>
           <a href="/admin/productos">Cancelar</a>
