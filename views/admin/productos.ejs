@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administración de productos</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-  <!-- Barra de navegación del Admin -->
   <header>
     <nav>
       <a href="/">Ir a la Tienda</a>
@@ -15,16 +15,14 @@
     </nav>
   </header>
 
-  <!-- Contenedor Principal -->
   <main>
     <div>
       <h2>Administración de productos</h2>
-      <a href="/admin/productos/nuevo">+ Nuevo producto</a>
+      <a href="/admin/productos/nuevo" class="btn">+ Nuevo producto</a>
     </div>
 
-    <!-- Tabla de Productos -->
-    <div >
-      <table >
+    <div>
+      <table border="1">
         <thead>
           <tr>
             <th>ID</th>
@@ -36,40 +34,31 @@
           </tr>
         </thead>
         <tbody>
-          <!-- Ejemplo de fila estática para el maquetado -->
-          <tr>
-            <td>1</td>
-            <td>Refresco</td>
-            <td>Bebidas</td>
-            <td>$ 2.500</td>
-            <td>25</td>
-            <td>
-              <a href="/admin/productos/editar/1">Editar</a>
-              <button onclick="eliminar(1)">Eliminar</button>
-            </td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Galletas</td>
-            <td>Almacén</td>
-            <td>$ 1.300</td>
-            <td>18</td>
-            <td class="actions">
-              <a href="/admin/productos/editar/2">Editar</a>
-              <button onclick="confirmDelete(2)">Eliminar</button>
-            </td>
-          </tr>
+          <% if (productos && productos.length > 0) { %>
+            <% productos.forEach(prod => { %>
+              <tr>
+                <td><%= prod.id %></td>
+                <td><%= prod.nombre %></td>
+                <td><%= prod.categoria %></td>
+                <td>$ <%= prod.precio %></td>
+                <td><%= prod.stock %></td>
+                <td>
+                  <a href="/admin/productos/editar/<%= prod.id %>">Editar</a>
+                  <form action="/admin/productos/eliminar/<%= prod.id %>" method="POST" style="display:inline;">
+                    <button type="submit" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</button>
+                  </form>
+                </td>
+              </tr>
+            <% }) %>
+          <% } else { %>
+            <tr>
+              <td colspan="6" style="text-align: center;">No hay productos cargados en la base de datos.</td>
+            </tr>
+          <% } %>
         </tbody>
       </table>
     </div>
   </main>
 
-  <script>
-    function eliminar(id) {
-      if (confirm('Estás seguro de que deseas eliminar este producto?')) {
-        // Lógica de eliminación cuando integren el backend
-      }
-    }
-  </script>
 </body>
 </html>
