@@ -1,4 +1,4 @@
-# quickshop 🛒
+# quickshop 
 
 quickshop es una página web de un supermercado. en ella podés ver los productos que hay para comprar sus precios y cuánto queda de cada uno.
 
