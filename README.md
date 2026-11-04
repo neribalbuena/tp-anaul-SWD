@@ -1,4 +1,4 @@
-# QuickShop 🛒
+# QuickShop 
 
 QuickShop es un proyecto de desarrollo web que consiste en un catálogo digital para un supermercado, acompañado de un panel de administración que permite gestionar los productos de manera sencilla y organizada.
 
