@@ -1,25 +1,30 @@
+/* sacamos los margenes y espacios que vienen por defecto */
 * {
     margin: 0;
     padding: 0;
 }
 
-body{
-    background-image: url("/public/img/fondo.jpg");
-}
-.menu {
-    background-color: #d3df6c;
-    padding: 20px;    
+/* ponemos la imagen de fondo para que aparezca en toda la pagina */
+body {
+    background-image: url("/img/fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
 }
 
+/* le damos color y espacio al menu de arriba */
+.menu {
+    background-color: #d3df6c;
+    padding: 20px;
+}
+
+/* acomodamos los enlaces que aparecen en el menu */
 .menu a {
     text-decoration: none;
     font-size: 18px;
 }
 
-.foto {
-    position: relative;
-}
-
+/* acomodamos el titulo principal de la portada */
 .foto strong {
     position: absolute;
     left: 40%;
@@ -28,19 +33,24 @@ body{
     color: skyblue;
     text-shadow: 2px 4px blue;
 }
+
+/* ponemos el texto de la portada en el lugar que queremos */
 .foto h3 {
     position: absolute;
     left: 10%;
     top: 25%;
     font-size: 25px;
     color: skyblue;
-    text-shadow: 1px 2px blue;    
+    text-shadow: 1px 2px blue;
 }
 
+/* hacemos que la imagen ocupe todo el espacio disponible */
 .foto img {
     width: 100%;
     height: 100%;
-    }
+}
+
+/* acomodamos el boton principal encima de la imagen */
 .foto button {
     position: absolute;
     top: 50%;
@@ -49,17 +59,22 @@ body{
     height: 70px;
     width: 220px;
 }
+
+/* le damos tamaño al texto que aparece dentro del boton */
 .foto button a {
     text-decoration: none;
     font-size: 18px;
 }
 
+/* acomodamos todos los productos para que queden ordenados */
 .catalogo {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
+
+/* armamos una caja para cada producto con su propio espacio */
 .producto {
     width: 250px;
     padding: 15px;
@@ -67,77 +82,62 @@ body{
     text-align: center;
     border: 2px solid black;
 }
+
+/* hacemos que las imagenes de los productos tengan el mismo tamaño */
 .producto img {
     width: 100%;
     height: 180px;
 }
+
+/* acomodamos los textos y les damos un poco de espacio */
 .producto p {
     color: black;
-    margin: 10px ;
+    margin: 10px;
 }
-section{
+
+/* agregamos espacio alrededor de cada seccion */
+section {
     padding: 20px;
 }
-button{
+
+/* configuramos el tamaño y el color de los botones de la pagina */
+button {
     background-color: rgb(140, 140, 224);
     height: 50px;
     width: 150px;
     font-weight: 700;
 }
-footer{
+
+/* dejamos un espacio grande en la parte de abajo de la pagina */
+footer {
     padding: 90px;
 }
-.boton a{
+
+/* sacamos el subrayado del enlace del boton de detalles */
+.boton a {
     text-decoration: none;
     color: black;
 }
-.catalogo .stock{
+
+/* ponemos el stock de los productos en color verde */
+.catalogo .stock {
     color: rgb(0, 209, 28);
-
 }
 
-
-
-/* --- Estilos básicos y limpios para QuickShop --- */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7f6;
-    margin: 0;
-    padding: 0;
-    color: #333;
-}
-
-/* Barra de navegación */
-header nav {
-    background-color: #2c3e50;
-    padding: 15px 20px;
-    display: flex;
-    gap: 20px;
-}
-
-header nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-header nav a:hover {
-    text-decoration: underline;
-}
-
-/* Contenedor principal */
+/* acomodamos el contenido principal y evitamos que sea demasiado ancho */
 main {
     padding: 20px;
     max-width: 1000px;
     margin: 0 auto;
 }
 
+/* cambiamos el color del titulo y dejamos espacio debajo */
 h2 {
-    color: #2c3e50;
+    color: rgb(122, 122, 122);
     margin-bottom: 15px;
 }
 
-/* Estilo de la tabla de administración */
+/* le damos estilo a la tabla donde aparecen los productos */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -148,24 +148,22 @@ table {
     overflow: hidden;
 }
 
+/* acomodamos el contenido de las filas y las columnas */
 th, td {
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #ddd;
 }
 
+/* ponemos un fondo oscuro en los titulos de la tabla */
 th {
-    background-color: #2c3e50;
+    background-color: #040a0f;
     color: white;
 }
 
-tr:hover {
-    background-color: #f9f9f9;
-}
-
-/* Botones y enlaces de acción */
-a.btn, button, input[type="submit"] {
-    background-color: #3498db;
+/* le damos un estilo al enlace que usamos como boton */
+a.btn {
+    background-color: #68946a;
     color: white;
     padding: 8px 12px;
     border: none;
@@ -175,21 +173,41 @@ a.btn, button, input[type="submit"] {
     font-size: 14px;
 }
 
-a.btn:hover, button:hover, input[type="submit"]:hover {
-    background-color: #2980b9;
+/* hacemos que los botones de editar y eliminar tengan el mismo tamaño */
+.eliminar, .editar {
+    width: 80px;
+    display: inline-block;
+    text-align: center;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
 }
 
-/* Estilos para formularios (Nuevo / Editar) */
+/* ponemos el color rojizo para identificar el boton de eliminar */
+.eliminar {
+    background-color: #e0958c;
+}
+
+/* ponemos el color verde para identificar el boton de editar */
+.editar {
+    background-color: #68946a;
+}
+
+/* dejamos espacio entre los distintos campos del formulario */
 form div {
     margin-bottom: 15px;
 }
 
+/* acomodamos los nombres que aparecen arriba de cada campo */
 label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
+/* damos tamaño y estilo a los campos donde escribimos o seleccionamos datos */
 input[type="text"], input[type="number"], select {
     width: 100%;
     padding: 8px;
