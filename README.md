@@ -1,63 +1,65 @@
-# QuickShop
+# quickshop 🛒
 
-QuickShop es una página web de un supermercado donde se pueden ver los productos que hay disponibles, sus precios y su stock.
+quickshop es una página web de un supermercado. en ella podés ver los productos que hay para comprar sus precios y cuánto queda de cada uno.
 
-También tiene una parte de administración donde se pueden agregar productos nuevos, editar los que ya están o eliminarlos.
+también tiene una parte donde podés agregar productos nuevos cambiar sus datos o borrarlos.
 
-## Funcionalidades
+## ¿qué se puede hacer?
 
-- Ver los productos del supermercado.
-- Ver sus precios, categorías y stock.
-- Agregar productos nuevos.
-- Modificar productos.
-- Eliminar productos.
-- Guardar los productos en una base de datos.
+- ver los productos.
+- ver cuánto cuestan.
+- ver cuánto stock hay.
+- agregar productos nuevos.
+- cambiar los productos.
+- borrar productos.
 
-## Tecnologías utilizadas
+## ¿qué usamos para hacerlo?
 
-- **HTML:** para crear la página.
-- **CSS:** para darle diseño y colores.
-- **JavaScript:** para agregar funciones.
-- **Node.js:** para ejecutar el proyecto.
-- **Express:** para manejar las rutas.
-- **EJS:** para mostrar los productos en la página.
-- **SQLite:** para guardar los datos.
+- **html:** para armar la página.
+- **css:** para darle colores y diseño.
+- **javascript:** para hacer que las cosas funcionen.
+- **node.js:** para ejecutar la página.
+- **express:** para manejar las rutas.
+- **ejs:** para mostrar los productos.
+- **sqlite:** para guardar los productos.
 
-## Instalación y ejecución
+## ¿cómo iniciar el proyecto?
 
-Para usar el proyecto hay que tener instalado Node.js.
+primero necesitás tener instalado node.js.
 
-### 1. Descargar el proyecto
+**1. descargar el proyecto**
 
 ```bash
 git clone https://github.com/neribalbuena/tp-anaul-SWD.git
 ```
 
-### 2. Entrar a la carpeta
+**2. entrar a la carpeta**
 
 ```bash
 cd tp-anaul-SWD
 ```
 
-### 3. Instalar las dependencias
+**3. instalar lo necesario**
 
 ```bash
 npm install
 ```
 
-### 4. Iniciar el proyecto
+**4. iniciar el proyecto**
 
 ```bash
 node server.js
 ```
 
-### 5. Abrir en el navegador
+**5. abrir la página**
+
+entrar a esta dirección:
 
 http://localhost:3000
 
-## Integrantes
+## integrantes
 
-- Neri Balbuena
-- Axel Inclan
-- Alejandro Gauna
-- Germán Fredes
+- neri balbuena
+- axel inclan
+- alejandro gauna
+- germán fredes
