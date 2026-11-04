@@ -16,69 +16,51 @@
     <p>categoria: <%= producto.descripcion %></p>
     <p>stock: <%= producto.stock %></p>
     <p>$<%= producto.precio %></p>
-    <button>
-        <a href="/">agregar</a>
-    </button>
-
 </article>
 </section>
 </section>
 <style>
 
-.fondo{ 
-    background-image: url("../public/img/fondo.jpg");
+
+.fondo {
+    background-image: url("/img/fondo.jpg");
+    background-size: cover;
     background-position: center;
-}
-.marca{
-    color: rgba(0, 0, 0, 0.571);
-}
-nav a{
-    text-decoration: none;
-    color: black;
-    font-size: 15px;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-h3 {
-    text-align: center;
-    font-size: 30px;
-    padding: 4px;
-    margin: 10px;
-}
-.detalles p {
-    padding: 13px;
-    font-size: 16px;
-}
-button {
-    background-color: rgba(27, 97, 189, 0.654);
-    text-decoration: none;
-    border: 0;
-    height: 50px;
-    width:320px;
-    border-radius: 10px;
-}
-button a{
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
-    font-family: cursive;
-}
 .detalles {
     display: flex;
     align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 30px;
+    width: 900px;
 }
-.detalles img {
-    width: 500px;
-}
-.info p, h3 {
-    text-align: left;
-    font-size: 30px;
 
+.detalles img {
+    width: 600px;
+    height: 600px;
 }
-.info p{
+
+.info {
+    padding: 10px;
+}
+
+.info h3 {
     font-size: 30px;
 }
-.info h3{
-font-size: 50px;
+
+.info p {
+    font-size: 18px;
+    margin: 15px 0;
+}
+
+.marca {
+    color: rgb(211, 97, 97);
 }
 
 </style>
