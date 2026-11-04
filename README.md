@@ -5,7 +5,7 @@ QuickShop es un proyecto de desarrollo web que consiste en un catálogo digital 
 ## Funcionalidades
 
 - Visualización del catálogo de productos.
-- Consulta de precios, categorías y disponibilidad de stock.
+- Consulta de precios, categorías y stock disponible.
 - Incorporación de nuevos productos.
 - Modificación de productos existentes.
 - Eliminación de productos.
@@ -23,16 +23,47 @@ QuickShop es un proyecto de desarrollo web que consiste en un catálogo digital 
 
 ## Instalación y ejecución
 
-Para ejecutar el proyecto, es necesario tener instalado "Node.js" (https://nodejs.org/).
+Para ejecutar el proyecto, es necesario tener instalado [Node.js](https://nodejs.org/).
 
 1. Clonar el repositorio
 
+```bash
 git clone https://github.com/neribalbuena/tp-anaul-SWD.git
+```
 
 2. Ingresar a la carpeta del proyecto
-
+   
+```bash
 cd tp-anaul-SWD
+```
 
+3. Instalar las dependencias
+   
+```bash
+npm install
+```
+
+4. Iniciar el servidor
+
+```bash
+node server.js
+```
+
+5. Acceder desde el navegador
+
+Abrir la siguiente dirección:
+
+```text
+http://localhost:3000
+```
+
+## Integrantes
+
+- Neri Balbuena
+- Axel Inclan
+- Alejandro Gauna
+- Germán Fredes
+  
 3. Instalar las dependencias
 
 npm install
