@@ -2,6 +2,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 /* ponemos la imagen de fondo para que aparezca en toda la pagina */
@@ -9,22 +10,45 @@ body {
     background-image: url("/img/fondo.jpg");
     background-size: cover;
     background-position: center;
+    background-attachment: fixed;
     min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #222;
 }
 
 /* le damos color y espacio al menu de arriba */
 .menu {
     background-color: #d3df6c;
     padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* acomodamos los enlaces que aparecen en el menu */
 .menu a {
     text-decoration: none;
     font-size: 18px;
+    color: #222;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #63813d;
 }
 
 /* acomodamos el titulo principal de la portada */
+.foto {
+    position: relative;
+    width: 100%;
+    min-height: 500px;
+    overflow: hidden;
+}
+
 .foto strong {
     position: absolute;
     left: 40%;
@@ -32,6 +56,7 @@ body {
     font-size: 60px;
     color: skyblue;
     text-shadow: 2px 4px blue;
+    z-index: 1;
 }
 
 /* ponemos el texto de la portada en el lugar que queremos */
@@ -42,12 +67,15 @@ body {
     font-size: 25px;
     color: skyblue;
     text-shadow: 1px 2px blue;
+    z-index: 1;
 }
 
 /* hacemos que la imagen ocupe todo el espacio disponible */
 .foto img {
     width: 100%;
-    height: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
 }
 
 /* acomodamos el boton principal encima de la imagen */
@@ -58,12 +86,24 @@ body {
     background: #c9ae74;
     height: 70px;
     width: 220px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 1;
+}
+
+.foto button:hover {
+    background-color: #ad925a;
+    transform: scale(1.05);
 }
 
 /* le damos tamaño al texto que aparece dentro del boton */
 .foto button a {
     text-decoration: none;
     font-size: 18px;
+    color: black;
+    font-weight: bold;
 }
 
 /* acomodamos todos los productos para que queden ordenados */
@@ -81,18 +121,29 @@ body {
     border-radius: 8px;
     text-align: center;
     border: 2px solid black;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.2);
 }
 
 /* hacemos que las imagenes de los productos tengan el mismo tamaño */
 .producto img {
     width: 100%;
     height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
 }
 
 /* acomodamos los textos y les damos un poco de espacio */
 .producto p {
     color: black;
     margin: 10px;
+    font-size: 15px;
 }
 
 /* agregamos espacio alrededor de cada seccion */
@@ -106,11 +157,23 @@ button {
     height: 50px;
     width: 150px;
     font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    opacity: 0.85;
 }
 
 /* dejamos un espacio grande en la parte de abajo de la pagina */
 footer {
     padding: 90px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    color: white;
+    margin-top: 30px;
 }
 
 /* sacamos el subrayado del enlace del boton de detalles */
@@ -121,7 +184,8 @@ footer {
 
 /* ponemos el stock de los productos en color verde */
 .catalogo .stock {
-    color: rgb(0, 209, 28);
+    color: rgb(0, 160, 28);
+    font-weight: bold;
 }
 
 /* acomodamos el contenido principal y evitamos que sea demasiado ancho */
@@ -129,11 +193,13 @@ main {
     padding: 20px;
     max-width: 1000px;
     margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.88);
+    border-radius: 8px;
 }
 
 /* cambiamos el color del titulo y dejamos espacio debajo */
 h2 {
-    color: rgb(122, 122, 122);
+    color: rgb(80, 80, 80);
     margin-bottom: 15px;
 }
 
@@ -171,6 +237,12 @@ a.btn {
     cursor: pointer;
     text-decoration: none;
     font-size: 14px;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+a.btn:hover {
+    background-color: #4e7650;
 }
 
 /* hacemos que los botones de editar y eliminar tengan el mismo tamaño */
@@ -183,6 +255,7 @@ a.btn {
     border: none;
     border-radius: 4px;
     text-decoration: none;
+    transition: 0.3s;
 }
 
 /* ponemos el color rojizo para identificar el boton de eliminar */
@@ -190,9 +263,17 @@ a.btn {
     background-color: #e0958c;
 }
 
+.eliminar:hover {
+    background-color: #c76f65;
+}
+
 /* ponemos el color verde para identificar el boton de editar */
 .editar {
     background-color: #68946a;
+}
+
+.editar:hover {
+    background-color: #4e7650;
 }
 
 /* dejamos espacio entre los distintos campos del formulario */
@@ -210,8 +291,76 @@ label {
 /* damos tamaño y estilo a los campos donde escribimos o seleccionamos datos */
 input[type="text"], input[type="number"], select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    font-size: 15px;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+select:focus {
+    border-color: #68946a;
+    box-shadow: 0 0 4px rgba(104, 148, 106, 0.4);
+}
+
+/* adaptamos la pagina para que se pueda ver correctamente desde celulares */
+@media (max-width: 768px) {
+    .menu {
+        gap: 15px;
+        padding: 15px;
+    }
+
+    .menu a {
+        font-size: 16px;
+    }
+
+    .foto strong {
+        left: 5%;
+        top: 10%;
+        font-size: 35px;
+    }
+
+    .foto h3 {
+        left: 5%;
+        top: 25%;
+        font-size: 18px;
+    }
+
+    .foto button {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 55%;
+    }
+
+    .foto button:hover {
+        transform: translateX(-50%) scale(1.05);
+    }
+
+    .foto img {
+        height: 400px;
+    }
+
+    .producto {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 40px 20px;
+    }
+
+    table {
+        font-size: 13px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
 }

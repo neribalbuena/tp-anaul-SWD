@@ -9,12 +9,12 @@
 <body>
 
   <header>
-    <nav>
+    <nav class="menu">
       <a href="/">Ir a la Tienda</a>
       <a href="/admin/productos">Productos</a>
     </nav>
   </header>
-
+  <br>
   <main>
     <div>
       <h2>Administración de productos</h2>
@@ -49,7 +49,7 @@
                 <td>
                   <a href="/admin/productos/editar/<%= prod.id %>">Editar</a>
                   <form action="/admin/productos/eliminar/<%= prod.id %>" method="POST" style="display:inline;">
-                    <button type="submit" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</button>
+                    <button style="display:inline" type="submit" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</button>
                   </form>
                 </td>
               </tr>
