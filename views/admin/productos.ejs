@@ -47,9 +47,10 @@
                 <td>$ <%= prod.precio %></td>
                 <td><%= prod.stock %></td>
                 <td>
-                  <a href="/admin/productos/editar/<%= prod.id %>">Editar</a>
-                  <form action="/admin/productos/eliminar/<%= prod.id %>" method="POST" style="display:inline;">
-                    <button style="display:inline" type="submit" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</button>
+                  <a href="/admin/productos/editar/<%= prod.id %>">
+                    <button class="verde" type="submit">Editar</button></a>
+                  <form action="/admin/productos/eliminar/<%= prod.id %>" method="POST"">
+                    <button class="rojo" type="submit" onclick="return confirm('¿Estás seguro de eliminar este producto?')">Eliminar</button>
                   </form>
                 </td>
               </tr>

@@ -93,11 +93,6 @@ body {
     z-index: 1;
 }
 
-.foto button:hover {
-    background-color: #ad925a;
-    transform: scale(1.05);
-}
-
 /* le damos tamaño al texto que aparece dentro del boton */
 .foto button a {
     text-decoration: none;
@@ -163,9 +158,6 @@ button {
     transition: 0.3s;
 }
 
-button:hover {
-    opacity: 0.85;
-}
 
 /* dejamos un espacio grande en la parte de abajo de la pagina */
 footer {
@@ -241,9 +233,6 @@ a.btn {
     transition: 0.3s;
 }
 
-a.btn:hover {
-    background-color: #4e7650;
-}
 
 /* hacemos que los botones de editar y eliminar tengan el mismo tamaño */
 .eliminar, .editar {
@@ -263,9 +252,7 @@ a.btn:hover {
     background-color: #e0958c;
 }
 
-.eliminar:hover {
-    background-color: #c76f65;
-}
+
 
 /* ponemos el color verde para identificar el boton de editar */
 .editar {
@@ -363,4 +350,24 @@ select:focus {
     th, td {
         padding: 8px;
     }
+}
+.verde {
+   background-color: rgb(179, 240, 117);
+    height: 50px;
+    width: 150px;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    margin: 5px;
+}
+
+.rojo{
+   background-color: rgb(240, 144, 117);
+  height: 50px;
+    width: 150px;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    margin: 5px;
+
 }
